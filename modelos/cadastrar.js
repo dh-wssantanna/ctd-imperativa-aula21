@@ -1,7 +1,10 @@
 // Importação do módulo File System do Nodejs.
 const fs = require('fs');
+// Importação do módulo path.
+const path = require('path');
+const raizDoProjeto = path.resolve('./');
 // Carregar o arquivo do nosso banco de dados.
-const arquivoEmJSON = fs.readFileSync(__dirname + '/banco-de-dados.json', 'utf-8');
+const arquivoEmJSON = fs.readFileSync(raizDoProjeto + '/banco-de-dados.json', 'utf-8');
 // Converte o arquivo de texto para objeto literal para poder manipulá-lo.
 const arquivoConvertidoEmObjetoLiteral = JSON.parse(arquivoEmJSON);
 
@@ -14,36 +17,6 @@ function CadastrarProfessor(nomeDoProfessor, sobrenomeDoProfessor) {
     */
     var nome = nomeDoProfessor;
     var sobrenome = sobrenomeDoProfessor;
-
-    /* 
-        Conceitualmente chamado de Get.
-        Serve para acessar um atriputo privado.
-    */
-    this.pegarNome = function() {
-        return nome;
-    }
-
-    this.pegarSobrenome = function() {
-        return sobrenome;
-    }
-
-    this.pegarNomeCompleto = function() {
-        return `${nome} ${sobrenome}`; 
-    }
-
-    /* 
-        Conceitualmente chamado de Set.
-        Serve para definir um novo valor a um atributo privado.
-    */
-    this.definirNome = function(novoNome) {
-        nome = novoNome;
-        return nome;
-    }
-
-    this.definirSobrenome = function(novoSobrenome) {
-        sobrenome = novoSobrenome;
-        return sobrenome;
-    }
 
     function salvarNoBancoDeDados() {
         // Caso os valores nome e sobrenome não estejam vazios e sejam uma string.
@@ -64,7 +37,7 @@ function CadastrarProfessor(nomeDoProfessor, sobrenomeDoProfessor) {
             // Converto o resultado em string.
             const arquivoConvertidoEmString = JSON.stringify(arquivoConvertidoEmObjetoLiteral);
             // Sobrescreve o arquivo banco-de-dados.json com o arquivo atualizado.
-            fs.writeFileSync(__dirname + '/banco-de-dados.json', arquivoConvertidoEmString);
+            fs.writeFileSync(raizDoProjeto + '/banco-de-dados.json', arquivoConvertidoEmString);
         } 
         else {
             return 'Não é um nome válido.';
