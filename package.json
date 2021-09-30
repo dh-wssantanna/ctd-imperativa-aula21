@@ -1,0 +1,25 @@
+{
+  "name": "ctd-imperativa-aula19",
+  "version": "1.0.0",
+  "description": "Aula 21 - Criando uma API parte III",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "trabalhando": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wssantanna/ctd-imperativa-aula21.git"
+  },
+  "author": "Willian Sant Anna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wssantanna/ctd-imperativa-aula21/issues"
+  },
+  "homepage": "https://github.com/wssantanna/ctd-imperativa-aula21#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4"
+  },
+  "devDependencies": {}
+}
