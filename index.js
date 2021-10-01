@@ -1,9 +1,9 @@
 /* 
     Aula 21 - Criando uma API parte III
     
-    (  ) Separar as rotas.
-    (  ) Separar os controles.
-    (  ) Separar os modelos.
+    ( x ) Separar as rotas.
+    ( x ) Separar os controles.
+    ( x ) Separar os modelos.
 */
 
 // Importação do módulo Express.
